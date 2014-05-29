@@ -33,6 +33,7 @@ public class Board{
 				board[row][col] = EMPTY;
 			}
 		}
+//		board[4][2] = 'n';
 	}
 	
 	public Board(Board boardToCopy) {
@@ -215,9 +216,6 @@ public class Board{
 	}
 	
 	public boolean validPawnMove(Move move, char toCapture, int rowDiff, int colDiff, Color color) {
-		if(Math.abs(rowDiff) == 1 || Math.abs(rowDiff) == 2) {
-			//System.out.println("Debug");
-		}
 		int rowMovement = color == Color.white ? -1 : 1;
 		boolean firstMove = move.from.row == (color == Color.white ? 6 : 1);
 		boolean validRow = rowDiff == rowMovement || (rowDiff == (firstMove ? rowMovement * 2 : rowMovement)); 
